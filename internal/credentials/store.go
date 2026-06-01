@@ -155,10 +155,17 @@ func (f *FallbackStore) Get(profile string) (Credentials, error) {
 	if err == nil {
 		return creds, nil
 	}
-	if !errors.Is(err, ErrNotConfigured) {
-		return Credentials{}, err
+	// The primary store failed. This covers both "no credentials stored"
+	// (ErrNotConfigured) and "backend unavailable" — e.g. no Secret Service
+	// on a headless Linux box, where the keyring returns a transport error.
+	// In either case, try the secondary (env vars) before giving up.
+	if secCreds, secErr := f.secondary.Get(profile); secErr == nil {
+		return secCreds, nil
 	}
-	return f.secondary.Get(profile)
+	// Neither store yielded usable credentials. Surface the primary error,
+	// which is the more informative one (ErrNotConfigured, or the underlying
+	// keyring fault that explains why the primary store is unusable).
+	return Credentials{}, err
 }
 
 func (f *FallbackStore) Set(profile string, creds Credentials) error {

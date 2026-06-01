@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+
+- Environment-variable credentials (`TRELLO_API_KEY` / `TRELLO_TOKEN`) now work on systems without an OS keyring backend. Previously, when the keyring was unavailable (e.g. no D-Bus Secret Service on a headless Linux box), the credential fallback short-circuited and never reached the environment variables, failing with `org.freedesktop.secrets was not provided by any .service files`.
+
+### Added
+
+- Documentation for headless / no-keyring environments (Linux, CI, SSH) in the authentication guide
+
 ## [1.1.0] - 2026-03-13
 
 ### Added

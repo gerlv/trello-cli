@@ -228,6 +228,52 @@ func TestFallbackStoreUsesSecondWhenFirstMissing(t *testing.T) {
 	}
 }
 
+// errStore is a Store whose Get always fails with a non-ErrNotConfigured
+// error, simulating an unavailable keyring backend (e.g. no Secret Service
+// running on a headless Linux box).
+type errStore struct {
+	err error
+}
+
+func (e errStore) Get(string) (credentials.Credentials, error) {
+	return credentials.Credentials{}, e.err
+}
+func (e errStore) Set(string, credentials.Credentials) error { return e.err }
+func (e errStore) Delete(string) error                       { return e.err }
+
+func TestFallbackStoreFallsBackWhenPrimaryUnavailable(t *testing.T) {
+	// Primary fails with a backend error that is NOT ErrNotConfigured, the way
+	// go-keyring reports a missing Secret Service.
+	primary := errStore{err: errors.New("org.freedesktop.secrets was not provided by any .service files")}
+	secondary := credentials.NewMemoryStore()
+	want := credentials.Credentials{APIKey: "env-key", Token: "env-token", AuthMode: "env"}
+	if err := secondary.Set("default", want); err != nil {
+		t.Fatalf("secondary.Set() returned error: %v", err)
+	}
+
+	store := credentials.NewFallbackStore(primary, secondary)
+	got, err := store.Get("default")
+	if err != nil {
+		t.Fatalf("Get() returned error: %v", err)
+	}
+	if got != want {
+		t.Errorf("Get() = %+v, want %+v", got, want)
+	}
+}
+
+func TestFallbackStoreReturnsPrimaryErrWhenSecondaryEmpty(t *testing.T) {
+	// Primary fails with a backend error and the secondary has nothing — the
+	// informative primary error should surface, not ErrNotConfigured.
+	primaryErr := errors.New("org.freedesktop.secrets was not provided by any .service files")
+	primary := errStore{err: primaryErr}
+	secondary := credentials.NewMemoryStore()
+
+	store := credentials.NewFallbackStore(primary, secondary)
+	if _, err := store.Get("default"); !errors.Is(err, primaryErr) {
+		t.Errorf("Get() error = %v, want %v", err, primaryErr)
+	}
+}
+
 func TestFallbackStoreReturnsErrWhenBothMissing(t *testing.T) {
 	primary := credentials.NewMemoryStore()
 	secondary := credentials.NewMemoryStore()

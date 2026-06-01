@@ -50,8 +50,32 @@ trello auth clear
 
 - Stored credentials are written to the OS keyring when available.
 - Environment credentials are read from `TRELLO_API_KEY` and `TRELLO_TOKEN`.
-- The CLI uses a fallback chain: keyring first, then environment variables.
+- The CLI uses a fallback chain: keyring first, then environment variables. If the keyring backend is unavailable (see [Headless / No Keyring](#headless--no-keyring-linux-ci-ssh)), the CLI falls back to environment variables.
 - Stored credentials are associated with the `default` profile in the current implementation.
+
+## Headless / No Keyring (Linux, CI, SSH)
+
+On Linux the OS keyring is provided by the D-Bus Secret Service
+(`org.freedesktop.secrets`), typically backed by gnome-keyring or KDE Wallet.
+Headless servers, CI runners, SSH sessions, containers, and minimal desktops
+often have no Secret Service running, so keyring storage fails with:
+
+```
+The name org.freedesktop.secrets was not provided by any .service files
+```
+
+In that environment, skip the keyring entirely and use environment-variable
+auth — no `auth login` or `auth set` required:
+
+```bash
+export TRELLO_API_KEY=<api-key>
+export TRELLO_TOKEN=<token>
+trello boards list
+```
+
+The CLI automatically falls back to these variables when the keyring backend
+is unavailable. `env` is read-only, so `trello auth set` and `trello auth login`
+still target the keyring and are not needed in this mode.
 
 ## Device Flow Login (Recommended)
 
