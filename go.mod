@@ -1,4 +1,4 @@
-module github.com/Scale-Flow/trello-cli
+module github.com/gerlv/trello-cli
 
 go 1.26.1
 

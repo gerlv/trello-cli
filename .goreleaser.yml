@@ -44,10 +44,10 @@ changelog:
 
 brews:
   - repository:
-      owner: Scale-Flow
+      owner: gerlv
       name: homebrew-tap
       token: "{{ .Env.HOMEBREW_TAP_TOKEN }}"
-    homepage: https://github.com/Scale-Flow/trello-cli
+    homepage: https://github.com/gerlv/trello-cli
     description: A cross-platform CLI for Trello with machine-friendly JSON output
     license: MIT
     install: |

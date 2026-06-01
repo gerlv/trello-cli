@@ -20,20 +20,20 @@ Keep both your API key and token handy for the authentication step below.
 ### Homebrew (macOS / Linux)
 
 ```bash
-brew tap Scale-Flow/tap
+brew tap gerlv/tap
 brew install trello-cli
 ```
 
 ### Go Install
 
 ```bash
-go install github.com/Scale-Flow/trello-cli/cmd/trello@latest
+go install github.com/gerlv/trello-cli/cmd/trello@latest
 ```
 
 ### Build From Source
 
 ```bash
-git clone https://github.com/Scale-Flow/trello-cli.git
+git clone https://github.com/gerlv/trello-cli.git
 cd trello-cli
 go build -o bin/trello ./cmd/trello
 ./bin/trello version --pretty

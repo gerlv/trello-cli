@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/Scale-Flow/trello-cli/internal/credentials"
+	"github.com/gerlv/trello-cli/internal/credentials"
 )
 
 func TestErrNotConfiguredSentinel(t *testing.T) {

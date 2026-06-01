@@ -6,9 +6,9 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/Scale-Flow/trello-cli/internal/contract"
-	"github.com/Scale-Flow/trello-cli/internal/credentials"
-	"github.com/Scale-Flow/trello-cli/internal/trello"
+	"github.com/gerlv/trello-cli/internal/contract"
+	"github.com/gerlv/trello-cli/internal/credentials"
+	"github.com/gerlv/trello-cli/internal/trello"
 )
 
 func TestListsListCommand(t *testing.T) {

@@ -4,9 +4,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/Scale-Flow/trello-cli/internal/auth"
-	"github.com/Scale-Flow/trello-cli/internal/contract"
-	"github.com/Scale-Flow/trello-cli/internal/credentials"
+	"github.com/gerlv/trello-cli/internal/auth"
+	"github.com/gerlv/trello-cli/internal/contract"
+	"github.com/gerlv/trello-cli/internal/credentials"
 )
 
 func TestRequireAuthWithCredentials(t *testing.T) {

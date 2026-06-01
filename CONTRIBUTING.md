@@ -7,7 +7,7 @@ Thank you for your interest in contributing! Please read our [Code of Conduct](C
 **Prerequisites:** Go 1.26 or later
 
 ```bash
-git clone https://github.com/Scale-Flow/trello-cli.git
+git clone https://github.com/gerlv/trello-cli.git
 cd trello-cli
 go build -o bin/trello ./cmd/trello
 go test -count=1 -race ./...
@@ -46,7 +46,7 @@ Keep the subject line under 72 characters. Use the body to explain what and why,
 
 ## Reporting Issues
 
-Use [GitHub Issues](https://github.com/Scale-Flow/trello-cli/issues) and include:
+Use [GitHub Issues](https://github.com/gerlv/trello-cli/issues) and include:
 
 - What you expected to happen
 - What actually happened

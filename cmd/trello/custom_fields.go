@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	"github.com/Scale-Flow/trello-cli/internal/auth"
-	"github.com/Scale-Flow/trello-cli/internal/contract"
-	"github.com/Scale-Flow/trello-cli/internal/trello"
+	"github.com/gerlv/trello-cli/internal/auth"
+	"github.com/gerlv/trello-cli/internal/contract"
+	"github.com/gerlv/trello-cli/internal/trello"
 	"github.com/spf13/cobra"
 )
 

@@ -3,8 +3,8 @@ package auth
 import (
 	"errors"
 
-	"github.com/Scale-Flow/trello-cli/internal/contract"
-	"github.com/Scale-Flow/trello-cli/internal/credentials"
+	"github.com/gerlv/trello-cli/internal/contract"
+	"github.com/gerlv/trello-cli/internal/credentials"
 )
 
 // RequireAuth loads credentials for the given profile. Returns AUTH_REQUIRED if missing.

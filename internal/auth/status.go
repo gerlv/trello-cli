@@ -9,8 +9,8 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/Scale-Flow/trello-cli/internal/contract"
-	"github.com/Scale-Flow/trello-cli/internal/credentials"
+	"github.com/gerlv/trello-cli/internal/contract"
+	"github.com/gerlv/trello-cli/internal/credentials"
 )
 
 // Member represents a Trello member for auth status responses.

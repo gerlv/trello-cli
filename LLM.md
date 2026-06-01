@@ -1,6 +1,6 @@
 # Trello CLI LLM Digest
 
-**Repository:** [github.com/Scale-Flow/trello-cli](https://github.com/Scale-Flow/trello-cli)
+**Repository:** [github.com/gerlv/trello-cli](https://github.com/gerlv/trello-cli)
 
 ## Purpose
 

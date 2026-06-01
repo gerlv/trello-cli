@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/Scale-Flow/trello-cli/internal/credentials"
-	"github.com/Scale-Flow/trello-cli/internal/trello"
+	"github.com/gerlv/trello-cli/internal/credentials"
+	"github.com/gerlv/trello-cli/internal/trello"
 )
 
 func TestBoardsListCommand(t *testing.T) {

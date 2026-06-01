@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/Scale-Flow/trello-cli/internal/contract"
+	"github.com/gerlv/trello-cli/internal/contract"
 )
 
 // mapHTTPError converts an HTTP error response to a ContractError.

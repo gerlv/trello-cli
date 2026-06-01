@@ -1,9 +1,9 @@
 # Trello CLI
 
-[![CI](https://github.com/Scale-Flow/trello-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/Scale-Flow/trello-cli/actions/workflows/ci.yml)
+[![CI](https://github.com/gerlv/trello-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/gerlv/trello-cli/actions/workflows/ci.yml)
 [![Go Version](https://img.shields.io/badge/Go-1.26-00ADD8?logo=go&logoColor=white)](https://go.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Release](https://img.shields.io/github/v/release/Scale-Flow/trello-cli?include_prereleases)](https://github.com/Scale-Flow/trello-cli/releases)
+[![Release](https://img.shields.io/github/v/release/gerlv/trello-cli?include_prereleases)](https://github.com/gerlv/trello-cli/releases)
 
 A CLI for Trello built for AI agents and Claude Code — every command returns structured JSON, making it ideal for autonomous workflows and agent-driven project management.
 
@@ -22,19 +22,19 @@ Includes a ready-to-use **Claude Code skill** so Claude can manage your Trello b
 ### Homebrew (macOS / Linux)
 
 ```bash
-brew tap Scale-Flow/tap
+brew tap gerlv/tap
 brew install trello-cli
 ```
 
 ### Go Install
 
 ```bash
-go install github.com/Scale-Flow/trello-cli/cmd/trello@latest
+go install github.com/gerlv/trello-cli/cmd/trello@latest
 ```
 
 ### Download Binary
 
-Download the latest release for your platform from [GitHub Releases](https://github.com/Scale-Flow/trello-cli/releases).
+Download the latest release for your platform from [GitHub Releases](https://github.com/gerlv/trello-cli/releases).
 
 ## Claude Code Skill
 
@@ -47,7 +47,7 @@ Add the skill to your project's `.claude/settings.json`:
 ```json
 {
   "skills": [
-    "github:Scale-Flow/trello-cli//using-trello-cli"
+    "github:gerlv/trello-cli//using-trello-cli"
   ]
 }
 ```

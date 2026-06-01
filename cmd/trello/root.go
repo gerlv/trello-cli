@@ -7,7 +7,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/Scale-Flow/trello-cli/internal/contract"
+	"github.com/gerlv/trello-cli/internal/contract"
 	"github.com/spf13/cobra"
 )
 

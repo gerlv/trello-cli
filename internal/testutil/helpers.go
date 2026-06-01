@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/Scale-Flow/trello-cli/internal/credentials"
+	"github.com/gerlv/trello-cli/internal/credentials"
 )
 
 // ParseEnvelope parses JSON output into a map. Fails the test if invalid.

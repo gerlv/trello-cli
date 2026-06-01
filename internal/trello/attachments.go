@@ -11,7 +11,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/Scale-Flow/trello-cli/internal/contract"
+	"github.com/gerlv/trello-cli/internal/contract"
 )
 
 func (c *Client) ListAttachments(ctx context.Context, cardID string) ([]Attachment, error) {

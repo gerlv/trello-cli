@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/Scale-Flow/trello-cli/internal/trello"
+	"github.com/gerlv/trello-cli/internal/trello"
 )
 
 func TestListLists(t *testing.T) {

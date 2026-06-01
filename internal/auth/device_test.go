@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/Scale-Flow/trello-cli/internal/auth"
+	"github.com/gerlv/trello-cli/internal/auth"
 )
 
 func TestDeviceClient_RequestCode(t *testing.T) {

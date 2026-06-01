@@ -14,8 +14,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Scale-Flow/trello-cli/internal/contract"
-	"github.com/Scale-Flow/trello-cli/internal/credentials"
+	"github.com/gerlv/trello-cli/internal/contract"
+	"github.com/gerlv/trello-cli/internal/credentials"
 )
 
 const trelloAuthorizeBase = "https://trello.com/1/authorize"

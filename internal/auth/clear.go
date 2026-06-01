@@ -1,6 +1,6 @@
 package auth
 
-import "github.com/Scale-Flow/trello-cli/internal/credentials"
+import "github.com/gerlv/trello-cli/internal/credentials"
 
 // ClearResult is the response shape for auth clear.
 type ClearResult struct {
