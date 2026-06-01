@@ -5,11 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.1.1] - 2026-06-01
 
 ### Fixed
 
 - Environment-variable credentials (`TRELLO_API_KEY` / `TRELLO_TOKEN`) now work on systems without an OS keyring backend. Previously, when the keyring was unavailable (e.g. no D-Bus Secret Service on a headless Linux box), the credential fallback short-circuited and never reached the environment variables, failing with `org.freedesktop.secrets was not provided by any .service files`.
+
+### Changed
+
+- Module path renamed to `github.com/gerlv/trello-cli` to match the hosting location, so `go install github.com/gerlv/trello-cli/cmd/trello@latest` resolves correctly. Earlier tags (`v1.0.0`, `v1.1.0`) still declare the previous path and are not installable under the new path.
 
 ### Added
 
